@@ -39,7 +39,7 @@
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
-                @include('backend.footer')
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kosan;
+use App\Models\Pembali;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        $penyewa = Pembali::all()->count();
+        $kosan = Kosan::all()->count();
+        return view('home', compact('kosan', 'penyewa'));
     }
 }

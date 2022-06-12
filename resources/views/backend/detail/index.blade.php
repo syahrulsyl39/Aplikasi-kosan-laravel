@@ -23,7 +23,7 @@
                             @foreach ($data_detail as $detail => $det)
                                 <tr>
                                     <td>{{ $detail + $data_detail->firstitem() }}</td>
-                                    <td>{{ $det->kosan->jeniskosan }}
+                                    <td>{{ $det->kosan->jeniskosan ?? 'data valid' }}
                                     </td>
                                     <td>{{ $det->deskripsi }}</td>
                                     <td>{{ $det->harga }}</td>

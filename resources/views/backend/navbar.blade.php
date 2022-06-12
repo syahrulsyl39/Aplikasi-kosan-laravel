@@ -5,11 +5,10 @@
             <div class="profile-desc">
                 <div class="profile-pic">
                     <div class="count-indicator">
-
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Cicit Asrida</h5>
-                        <span>Online</span>
+                        <h3 class="mb-0 font-weight-normal">Cicit Kosan</h3>
+                        <span>Mudah, Murah Dan Aman</span>
                     </div>
                 </div>
                 {{-- <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a> --}}
@@ -54,7 +53,7 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{ route('home') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
@@ -91,7 +90,7 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-table-large"></i>
                 </span>
-                <span class="menu-title">Pembeli</span>
+                <span class="menu-title">Penyewa</span>
             </a>
         </li>
         <li class="nav-item menu-items">
@@ -126,5 +125,13 @@
             </div>
         </li>
 
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('index-user') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-file-document-box"></i>
+                </span>
+                <span class="menu-title">User</span>
+            </a>
+        </li>
     </ul>
 </nav>
