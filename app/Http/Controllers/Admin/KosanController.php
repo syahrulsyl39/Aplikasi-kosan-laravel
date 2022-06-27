@@ -23,12 +23,13 @@ class KosanController extends Controller
     
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'jalan'=>'required|string',
-            'harga'=>'required|integer',
-            'jeniskosan'=>'required|string',
-            'gambar'=>'required'
-        ]);
+        // dd($request->all());
+        // $this->validate($request, [
+        //     'jalan'=>'required|string',
+        //     'harga'=>'required|integer',
+        //     'jeniskosan'=>'required|string',
+        //     'gambar'=>'required'
+        // ]);
 
         if ($request->file('gambar')) {
             $file = $request->file('gambar')->store('kosan');
@@ -40,6 +41,7 @@ class KosanController extends Controller
             'jeniskosan' =>$request->input('jeniskosan'),
             'gambar'=>$file
         ]);
+
 
         return redirect()->route('index-kosan');
     }
