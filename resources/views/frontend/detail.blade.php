@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="../fashi-shayna/index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="{{ route('index') }}"><i class="fa fa-home"></i> Home</a>
                         <span>Detail</span>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="pd-desc">
                                     <p>
-                                        Berada di kecematan panakkukan, kelurahan masale tepatnya di jln.abdullah daeng sirua lorong 2. 
+                                        Berada di kecematan panakkukan, kelurahan masale tepatnya di jln.abdullah daeng sirua lorong 2.
                                     </p>
                                     <p>Lokasinya sangat strategis karna dekat dengan beberapa tempat yang sering dikunjungi seperti mall panakukang, kampus-kampus ternama, serta toko kebutuhan-kebutuhan yang lainnya. Dijamin aman dari banjir dan juga tersedia parkiran motor. Luas kamar sekitar 4x6 meter, kamar mandi dalam, dan dapur umum.</p>
                                     <p>Fasilitasnya terdapat 1 buah lemari, 1 buah springbet ukuran 120x200cm beserta spreinya, 1 buah AC, 2 buah bantal (1 bantal biasa 1 bantal guling), 1 set gorden jendela, 1 buah kipas angin turbo, 1 buah meja belajar dan 1 buah kursi, serta wifi.</p>
@@ -62,7 +62,7 @@
                                     <h4>Rp1.000.000/bulan</h4>
                                 </div>
                                 <div class="quantity">
-                                    <a href="shopping-cart.html" class="primary-btn pd-cart">Booking</a>
+                                    <a href="{{ route('booking') }}" class="primary-btn pd-cart">Booking</a>
                                 </div>
                             </div>
                         </div>
@@ -90,9 +90,9 @@
                             <img src="{{asset('frontend2/img/products/women-1.jpg')}}" height="175px" alt="" />
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="icon_bag_alt"></i></a>
+                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                 </li>
-                                <li class="quick-view"><a href="../fashi-shayna/product.html">Detail</a></li>
+                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
@@ -113,9 +113,9 @@
                             <img src="{{asset('frontend2/img/products/women-2.jpg')}}" height="175px" alt="" />
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="icon_bag_alt"></i></a>
+                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                 </li>
-                                <li class="quick-view"><a href="../fashi-shayna/product1.html">Detail</a></li>
+                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
@@ -135,9 +135,9 @@
                             <img src="{{asset('frontend2/img/products/women-3.jpg')}}" height="175px" alt="" />
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="icon_bag_alt"></i></a>
+                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                 </li>
-                                <li class="quick-view"><a href="../fashi-shayna/product2.html">Detail</a></li>
+                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
@@ -157,9 +157,9 @@
                             <img src="{{asset('frontend2/img/products/women-4.jpg')}}" height="175px" alt="" />
                             <ul>
                                 <li class="w-icon active">
-                                    <a href="#"><i class="icon_bag_alt"></i></a>
+                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                 </li>
-                                <li class="quick-view"><a href="../fashi-shayna/product3.html">Detail</a></li>
+                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">

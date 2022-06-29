@@ -21,14 +21,14 @@ use App\Http\Controllers\Frontend\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/detail', [HomeController::class, 'detail']);
+Route::get('/', [HomeController::class, 'home'])->name('index');
 
-Route::get('/booking', [HomeController::class, 'booking']);
+Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
 
-Route::get('/succes', [HomeController::class, 'succes']);
+Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 
+Route::get('/succes', [HomeController::class, 'succes'])->name('succes');
 
 
 Auth::routes();
@@ -37,9 +37,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //route image
-Route::middleware('auth', 'active:admin')->group(function(){
+Route::middleware('auth', 'active:admin')->group(function () {
 
-    
+
     Route::get('/indeximage', [ImageController::class, 'index'])->name('index-image');
     Route::get('/createimage', [ImageController::class, 'create'])->name('create-image');
     Route::post('/storeimage', [ImageController::class, 'store'])->name('store-image');
@@ -49,30 +49,30 @@ Route::middleware('auth', 'active:admin')->group(function(){
 });
 
 //route kosan
-Route::middleware('auth', 'active:admin')->group(function(){
-Route::get('/indexkosan', [KosanController::class, 'index'])->name('index-kosan');
-Route::get('/craetekosan', [KosanController::class, 'create'])->name('create-kosan');
-Route::post('/storekosan', [KosanController::class, 'store'])->name('store-kosan');
-Route::get('/editkosan/{id}', [KosanController::class, 'edit'])->name('edit-kosan');
-Route::put('/updatekosan/{id}', [KosanController::class, 'update'])->name('update-kosan');
-Route::delete('/deletekosan/{id}', [KosanController::class, 'delete'])->name('delete-kosan');
+Route::middleware('auth', 'active:admin')->group(function () {
+    Route::get('/indexkosan', [KosanController::class, 'index'])->name('index-kosan');
+    Route::get('/craetekosan', [KosanController::class, 'create'])->name('create-kosan');
+    Route::post('/storekosan', [KosanController::class, 'store'])->name('store-kosan');
+    Route::get('/editkosan/{id}', [KosanController::class, 'edit'])->name('edit-kosan');
+    Route::put('/updatekosan/{id}', [KosanController::class, 'update'])->name('update-kosan');
+    Route::delete('/deletekosan/{id}', [KosanController::class, 'delete'])->name('delete-kosan');
 });
 
 //route pembeli
-Route::middleware('auth', 'active:admin')->group(function(){
+Route::middleware('auth', 'active:admin')->group(function () {
     Route::get('/indexpembeli', [PembeliController::class, 'index'])->name('index-pembeli');
     Route::get('/detailpembeli/{id}', [PembeliController::class, 'detail'])->name('detail-pembeli');
     Route::delete('/deletepembeli/{id}', [PembeliController::class, 'delete'])->name('delete-pembeli');
 });
 
 //route booking
-Route::middleware('auth', 'active:admin')->group(function(){
+Route::middleware('auth', 'active:admin')->group(function () {
     Route::get('/indexbooking', [BookingController::class, 'index'])->name('index-booking');
     Route::delete('/deletebooking/{id}', [BookingController::class, 'delete'])->name('delete-booking');
 });
 
 //route detail
-Route::middleware('auth', 'active:admin')->group(function(){
+Route::middleware('auth', 'active:admin')->group(function () {
     Route::get('/indexdetail', [DetailController::class, 'index'])->name('index-detail');
     Route::get('/createdetail', [DetailController::class, 'create'])->name('create-detail');
     Route::post('/storedetail', [DetailController::class, 'store'])->name('store-detail');

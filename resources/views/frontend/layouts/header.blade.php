@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="{{ route('index') }}">
                                 <i class="fa fa-home" style="font-size:40px"></i>
                             </a>
                         </div>

@@ -12,7 +12,7 @@
                             <!-- <span>Bag,kids</span> -->
                             <h1>Kost Cicit</h1>
                             <p style="color: black;">kenyamanan anda paling utama (anda nyaman saya senang)</p>
-                            <a href="#" class="primary-btn">Check Now</a>
+                            <a href="" class="primary-btn">Check Now</a>
                         </div>
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                                 <img src="{{asset('frontend2/img/mickey1.jpg')}}" height="220px" alt="" />
                                 <ul>
                                     <li class="w-icon active">
-                                        <a href="#"><i class="icon_bag_alt"></i></a>
+                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                     </li>
-                                    <li class="quick-view"><a href="product.html">Detail</a></li>
+                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -65,9 +65,9 @@
                                 <img src="{{asset('frontend2/img/products/women-2.jpg')}}" height="220px"  alt="" />
                                 <ul>
                                     <li class="w-icon active">
-                                        <a href="#"><i class="icon_bag_alt"></i></a>
+                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                     </li>
-                                    <li class="quick-view"><a href="product1.html">Detail</a></li>
+                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -85,9 +85,9 @@
                                 <img src="{{asset('frontend2/img/products/women-3.jpg')}}" height="220px" alt="" />
                                 <ul>
                                     <li class="w-icon active">
-                                        <a href="#"><i class="icon_bag_alt"></i></a>
+                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                     </li>
-                                    <li class="quick-view"><a href="product2.html">Detail</a></li>
+                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -105,9 +105,9 @@
                                 <img src="{{asset('frontend2/img/products/women-4.jpg')}}" height="220px" alt="" />
                                 <ul>
                                     <li class="w-icon active">
-                                        <a href="#"><i class="icon_bag_alt"></i></a>
+                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
                                     </li>
-                                    <li class="quick-view"><a href="product3.html">Detail</a></li>
+                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
                                     <li class="w-icon">
                                         <a href="#"><i class="fa fa-random"></i></a>
                                     </li>
