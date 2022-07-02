@@ -7,37 +7,44 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-12">
                             <h4 class="mb-4">
                                 Data Pemesan:
                             </h4>
                             <div class="user-checkout">
                                 <form>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">Nama lengkap</label>
-                                        <input type="text" class="form-control" id="namaLengkap" aria-describedby="namaHelp" placeholder="Masukan Nama">
+                                   <div class="row col-12 m-auto">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="namaLengkap">Nama lengkap</label>
+                                            <input type="text" class="form-control" id="namaLengkap" aria-describedby="namaHelp" placeholder="Masukan Nama">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="namaLengkap">Email Address</label>
+                                            <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" placeholder="Masukan Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="namaLengkap">No. HP</label>
+                                            <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan No. HP">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">Email Address</label>
-                                        <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" placeholder="Masukan Email">
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="namaLengkap">Type Kost</label>
+                                            <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan type kost ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="namaLengkap">Total Biaya</label>
+                                            <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan total biaya">
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <label for="namaLengkap">Alamat</label>
+                                            <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan alamat">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">No. HP</label>
-                                        <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan No. HP">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">Type Kost</label>
-                                        <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan No. HP">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">Total Biaya</label>
-                                        <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan No. HP">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="namaLengkap">Alamat</label>
-                                        <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp" placeholder="Masukan No. HP">
-                                    </div>
+                                   </div>
                                 </form>
                             </div>
                         </div>
