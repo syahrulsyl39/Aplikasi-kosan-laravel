@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Kosan;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $home = Kosan::all();
-        return view('frontend.home', compact('home'));
+        return view('frontend.home');
     }
     public function detail()
     {
@@ -21,6 +21,30 @@ class HomeController extends Controller
     {
         return view('frontend.booking');
     }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'customer_name' => 'required|string',
+            'email' => 'required|string',
+            'no_phone' => 'required|string',
+            'boarding_type' => 'required|string',
+            'address' => 'required|string',
+            'total_cost' => 'required|string',
+        ]);
+
+        Booking::create([
+            "customer_name" => $request->input('customer_name'),
+            "email" => $request->input('email'),
+            "no_phone" => $request->input('no_phone'),
+            "boarding_type" => $request->input('boarding_type'),
+            "address" => $request->input('address'),
+            "total_cost" => $request->input('total_cost'),
+        ]);
+
+        return redirect()->route('succes');
+    }
+
     public function succes()
     {
         return view('frontend.succes');
