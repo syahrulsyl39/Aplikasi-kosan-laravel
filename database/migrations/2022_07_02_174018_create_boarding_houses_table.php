@@ -18,7 +18,7 @@ class CreateBoardingHousesTable extends Migration
             $table->string('boarding_type');
             $table->string('street_name');
             $table->string('price');
-            $table->string('boarding_pictures');
+            $table->string('picture');
             $table->timestamps();
         });
     }

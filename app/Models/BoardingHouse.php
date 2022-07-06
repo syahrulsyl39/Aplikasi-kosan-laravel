@@ -13,6 +13,6 @@ class BoardingHouse extends Model
         'boarding_type',
         'street_name',
         'price',
-        'boarding_pictures'
+        'picture'
     ];
 }
