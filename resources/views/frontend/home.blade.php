@@ -39,9 +39,10 @@
             <div class="row">
                 <div class="col-lg-12 mt-5">
                     <div class="product-slider owl-carousel">
+                        @foreach ( $boarding as $item )
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="{{asset('frontend2/img/mickey1.jpg')}}" height="220px" alt="" />
+                                <img src="{{ asset ('storage/'.$item->picture) }}" height="220px" alt="" />
                                 <ul>
                                     <li class="w-icon active">
                                         <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
@@ -50,79 +51,16 @@
                                 </ul>
                             </div>
                             <div class="pi-text">
-                                <div class="catagory-name">Kost khusus putri</div>
+                                <div class="catagory-name">{{ $item->boarding_type }}</div>
                                 <a href="#">
-                                    <h5>Jln.abdullah dg sirua lorong 2</h5>
+                                    <h5>{{ $item->street_name }}</h5>
                                 </a>
                                 <div class="product-price">
-                                    Rp9.000.000/tahun
-                                    <span>Rp10.000.000/tahun</span>
+                                   {{ $item->price }}
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="{{asset('frontend2/img/products/women-2.jpg')}}" height="220px"  alt="" />
-                                <ul>
-                                    <li class="w-icon active">
-                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                    </li>
-                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Kost khusus pria</div>
-                                <a href="#">
-                                    <h5>Jln.abdullah dg sirua lorong 10</h5>
-                                </a>
-                                <div class="product-price">
-                                    Rp.5.500.000/tahun
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="{{asset('frontend2/img/products/women-3.jpg')}}" height="220px" alt="" />
-                                <ul>
-                                    <li class="w-icon active">
-                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                    </li>
-                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Kost Campuran</div>
-                                <a href="#">
-                                    <h5>Jln.abdullah dg sirua lorong 12</h5>
-                                </a>
-                                <div class="product-price">
-                                    Rp6.000.000/tahun
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="{{asset('frontend2/img/products/women-4.jpg')}}" height="220px" alt="" />
-                                <ul>
-                                    <li class="w-icon active">
-                                        <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                    </li>
-                                    <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                                    <li class="w-icon">
-                                        <a href="#"><i class="fa fa-random"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Kost Pasutri</div>
-                                <a href="#">
-                                    <h5>Jln.abdullah dg sirua lorong 5</h5>
-                                </a>
-                                <div class="product-price">
-                                    Rp7.000.000/tahun
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

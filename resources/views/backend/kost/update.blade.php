@@ -43,7 +43,7 @@
             <label for="floatingInput">Foto</label><br>
             <small>Pilih gambar jika ingin mengubah</small>
             <input type="file" class="form-control" id="floatingInput"
-                placeholder="Foto" name="image" value="{{ $boarding->picture }}">
+                placeholder="Foto" name="picture" value="{{ $boarding->picture }}">
             @if ($boarding->picture)
                 <img class="mt-3" width="100px" height="100px" src="{{ asset('storage/' .$boarding->picture) }}" alt="scascs">
             @else

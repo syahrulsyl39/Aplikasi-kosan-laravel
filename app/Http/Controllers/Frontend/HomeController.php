@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BoardingHouse;
 use App\Models\Booking;
 use App\Models\Kosan;
 use Illuminate\Http\Request;
@@ -11,7 +12,8 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $boarding = BoardingHouse::all();
+        return view('frontend.home', compact('boarding'));
     }
     public function detail()
     {

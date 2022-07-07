@@ -56,11 +56,8 @@ class BoardingController extends Controller
             'boarding_type' => 'required|string',
             'street_name' => 'required|string',
             'price' => 'required|string',
-            // 'boarding_pictures' => 'required',
         ]);
-        dd($request->file('picture'));
 
-        // return response()->json($request);
         $boarding = BoardingHouse::where('id', $id)->first();
         if ($request->file('picture')) {
             $file = $request->file('picture')->store('gambar', 'public');
