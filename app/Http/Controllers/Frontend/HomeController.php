@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\BoardingHouse;
 use App\Models\Booking;
 use App\Models\Kosan;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        $boarding = BoardingHouse::all();
-        return view('frontend.home', compact('boarding'));
+        $product = Product::all();
+        return view('frontend.home', compact('product'));
     }
     public function detail()
     {

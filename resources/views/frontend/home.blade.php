@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-12 mt-5">
                     <div class="product-slider owl-carousel">
-                        @foreach ( $boarding as $item )
+                        @foreach ( $product as $item )
                         <div class="product-item">
                             <div class="pi-pic">
                                 <img src="{{ asset ('storage/'.$item->picture) }}" height="220px" alt="" />

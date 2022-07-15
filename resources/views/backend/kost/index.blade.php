@@ -2,13 +2,12 @@
 
 @section('content')
 <div class="col-lg-12">
-    <a href="{{ route('create-kosan') }}" class=" btn btn-success create-new-button">+ Create New</a>
+    <a href="{{ route('create-kosan') }}" class=" btn btn-success create-new-button">+ Tambah Data</a>
 </div><br>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Bordered table</h4>
-        </p>
+        <h4 class="card-title">Daftar Kost</h4>
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
@@ -17,28 +16,41 @@
                 <th> Type Kost </th>
                 <th> Nama Jalan </th>
                 <th> Harga </th>
-                <th> Gambar </th>
+                <th> Detail </th>
                 <th> Aksi </th>
               </tr>
             </thead>
             <tbody>
-              @foreach ( $boarding as $key=>$item )
+              @forelse ( $product as $key=>$item )
               <tr>
-                <th scope="row">{{ $key+1 }}</th>
-                <td> {{ $item->boarding_type }}</td>
-                <td> {{ $item->street_name }}</td>
-                <td> {{ $item->price }} </td>
-                <td> <img width="50px" height="70px" src="{{ asset ('storage/'.$item->picture) }}" alt="fesfh"> </td>
+                <th>{{ $key+1 }}</th>
+                <td>{{ $item->boarding_type	 }}</td>
+                <td>{{ $item->street_name }}</td>
+                <td>{{ $item->price }}</td>
+                <td>{{ $item->details }}</td>
                 <td>
-                    <a href="{{ route('edit-kosan', $item->id) }}" class="btn btn-primary">Edit</a>
-                    <form style="display: inline" action="{{ route ('destroy-kosan', $item->id) }}" method="POST">
+                    <a href="" class="btn btn-info btn-sm">
+                        <i class="mdi mdi-image-area"></i>
+                    </a>
+                    <a href="{{ route('edit-kosan', $item->id) }}" class="btn btn-primary btn-sm">
+                        <i class="mdi mdi-pencil"></i>
+                    </a>
+                    <form action="{{ route('destroy-kosan', $item->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger">Hapus</button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="mdi mdi-delete"></i>
+                        </button>
                     </form>
                 </td>
               </tr>
-              @endforeach
+              @empty
+              <tr>
+                <td colspan="6" class="text-center p-5">
+                    Data tidak tersedia
+                </td>
+              </tr>
+              @endforelse
             </tbody>
           </table>
         </div>

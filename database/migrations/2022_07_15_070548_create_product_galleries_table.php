@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBoardingHousesTable extends Migration
+class CreateProductGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateBoardingHousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('boarding_houses', function (Blueprint $table) {
+        Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('boarding_type');
-            $table->string('street_name');
-            $table->string('price');
-            $table->string('picture');
+            $table->integer('products_id');
+            $table->string('photo');
+            $table->boolean('is_default');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateBoardingHousesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boarding_houses');
+        Schema::dropIfExists('product_galleries');
     }
 }

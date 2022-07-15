@@ -64,6 +64,17 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{ asset('backend/js/dashboard.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+                .create( document.querySelector( '.ckeditor' ) )
+                .then( editor => {
+                        console.log( editor );
+                } )
+                .catch( error => {
+                        console.error( error );
+                } );
+    </script>
     <!-- End custom js for this page -->
   </body>
 </html>

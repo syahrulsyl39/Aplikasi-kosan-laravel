@@ -1,13 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\Administrator;
-use App\Http\Controllers\Admin\BookingController;
-use App\Http\Controllers\Admin\DetailController;
-use App\Http\Controllers\Admin\ImageController;
-use App\Http\Controllers\Admin\KosanController;
-use App\Http\Controllers\Admin\PembeliController;
-use App\Http\Controllers\Backend\BoardingController;
+
 use App\Http\Controllers\Backend\BookingController as BackendBookingController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Models\Detail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -40,9 +35,9 @@ Route::get('/Dashboard', [App\Http\Controllers\HomeController::class, 'dashboard
 
 Route::get('Boking', [BackendBookingController::class, 'show'])->name('show-booking');
 
-Route::get('Kosan', [BoardingController::class, 'show'])->name('show-kosan');
-Route::post('Kosan', [BoardingController::class, 'store'])->name('store-kosan');
-Route::get('Kosan/create', [BoardingController::class, 'create'])->name('create-kosan');
-Route::get('Kosan/create/{id}', [BoardingController::class, 'edit'])->name('edit-kosan');
-Route::put('Kosan/create/{id}', [BoardingController::class, 'update'])->name('update-kosan');
-Route::delete('Kosan/create/{id}', [BoardingController::class, 'destroy'])->name('destroy-kosan');
+Route::get('Kosan', [ProductController::class, 'show'])->name('show-kosan');
+Route::post('Kosan', [ProductController::class, 'store'])->name('store-kosan');
+Route::get('Kosan/create', [ProductController::class, 'create'])->name('create-kosan');
+Route::get('Kosan/create/{id}', [ProductController::class, 'edit'])->name('edit-kosan');
+Route::put('Kosan/create/{id}', [ProductController::class, 'update'])->name('update-kosan');
+Route::delete('Kosan/create/{id}', [ProductController::class, 'destroy'])->name('destroy-kosan');
