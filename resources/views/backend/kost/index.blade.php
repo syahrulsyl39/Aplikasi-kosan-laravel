@@ -17,6 +17,7 @@
                 <th> Nama Jalan </th>
                 <th> Harga </th>
                 <th> Detail </th>
+                <th> Gambar </th>
                 <th> Aksi </th>
               </tr>
             </thead>
@@ -28,10 +29,8 @@
                 <td>{{ $item->street_name }}</td>
                 <td>{{ $item->price }}</td>
                 <td>{{ $item->details }}</td>
+                <td><img width="50px" height="70px" src="{{ asset ('storage/'.$item->photo) }}" alt="fesfh"></td>
                 <td>
-                    <a href="" class="btn btn-info btn-sm">
-                        <i class="mdi mdi-image-area"></i>
-                    </a>
                     <a href="{{ route('edit-kosan', $item->id) }}" class="btn btn-primary btn-sm">
                         <i class="mdi mdi-pencil"></i>
                     </a>
@@ -46,7 +45,7 @@
               </tr>
               @empty
               <tr>
-                <td colspan="6" class="text-center p-5">
+                <td colspan="8" class="text-center p-5">
                     Data tidak tersedia
                 </td>
               </tr>

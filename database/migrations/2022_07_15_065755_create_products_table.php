@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('street_name');
             $table->string('price');
             $table->longText('details');
+            $table->string('photo');
             $table->timestamps();
         });
     }

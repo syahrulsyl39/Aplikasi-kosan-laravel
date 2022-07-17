@@ -40,21 +40,5 @@
                 <span class="menu-title">Penyewa</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="">
-                <span class="menu-icon">
-                    <i class="mdi mdi-chart-bar"></i>
-                </span>
-                <span class="menu-title">Detail</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="">
-                <span class="menu-icon">
-                    <i class="mdi mdi-file-document-box"></i>
-                </span>
-                <span class="menu-title">User</span>
-            </a>
-        </li>
     </ul>
 </nav>

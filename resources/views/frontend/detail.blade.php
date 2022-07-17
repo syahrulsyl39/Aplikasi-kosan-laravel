@@ -58,8 +58,7 @@
                                     </p>
                                     <p>Lokasinya sangat strategis karna dekat dengan beberapa tempat yang sering dikunjungi seperti mall panakukang, kampus-kampus ternama, serta toko kebutuhan-kebutuhan yang lainnya. Dijamin aman dari banjir dan juga tersedia parkiran motor. Luas kamar sekitar 4x6 meter, kamar mandi dalam, dan dapur umum.</p>
                                     <p>Fasilitasnya terdapat 1 buah lemari, 1 buah springbet ukuran 120x200cm beserta spreinya, 1 buah AC, 2 buah bantal (1 bantal biasa 1 bantal guling), 1 set gorden jendela, 1 buah kipas angin turbo, 1 buah meja belajar dan 1 buah kursi, serta wifi.</p>
-                                    <h4>Rp9.000.000/tahun</h4>
-                                    <h4>Rp1.000.000/bulan</h4>
+                                    <h4>9.000.000</h4>
                                 </div>
                                 <div class="quantity">
                                     <a href="{{ route('booking') }}" class="primary-btn pd-cart">Booking</a>
@@ -84,10 +83,11 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ( $product as $item )
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="{{asset('frontend2/img/products/women-1.jpg')}}" height="175px" alt="" />
+                            <img src="{{ asset ('storage/'.$item->photo) }}" height="220px" alt="" />
                             <ul>
                                 <li class="w-icon active">
                                     <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
@@ -96,83 +96,17 @@
                             </ul>
                         </div>
                         <div class="pi-text">
-                            <div class="catagory-name">Kost khusus putri</div>
+                            <div class="catagory-name">{{ $item->boarding_type }}</div>
                             <a href="#">
-                                <h5>Jln.abdullah dg sirua lorong 2</h5>
+                                <h5>{{ $item->street_name }}</h5>
                             </a>
                             <div class="product-price">
-                                Rp9.000.000/tahun
-                                <span>Rp10.000.000/tahun</span>
+                                {{ $item->price }}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{{asset('frontend2/img/products/women-2.jpg')}}" height="175px" alt="" />
-                            <ul>
-                                <li class="w-icon active">
-                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                </li>
-                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">kost khusus putra</div>
-                            <a href="#">
-                                <h5>Jln.abdullah dg sirua lorong 10</h5>
-                            </a>
-                            <div class="product-price">
-                                Rp.5.500.000/tahun
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{{asset('frontend2/img/products/women-3.jpg')}}" height="175px" alt="" />
-                            <ul>
-                                <li class="w-icon active">
-                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                </li>
-                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">kost campuran</div>
-                            <a href="#">
-                                <h5>Jln.abdullah dg sirua lorong 12</h5>
-                            </a>
-                            <div class="product-price">
-                                Rp6.000.000/tahun
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{{asset('frontend2/img/products/women-4.jpg')}}" height="175px" alt="" />
-                            <ul>
-                                <li class="w-icon active">
-                                    <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
-                                </li>
-                                <li class="quick-view"><a href="{{ route('detail') }}">Detail</a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">pasutri</div>
-                            <a href="#">
-                                <h5>Jln.abdullah dg sirua lorong 5</h5>
-                            </a>
-                            <div class="product-price">
-                                Rp7.000.000/tahun
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

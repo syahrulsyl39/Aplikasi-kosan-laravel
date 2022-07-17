@@ -13,7 +13,8 @@ class Product extends Model
         'boarding_type',
         'street_name',
         'price',
-        'details'
+        'details',
+        'photo',
     ];
 
     public function galleries()

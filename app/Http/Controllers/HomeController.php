@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +30,8 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('backend.layouts.dahsboad');
+        $kosan = Product::all()->count();
+        $booking = Booking::all()->count();
+        return view('backend.layouts.dahsboad', compact('kosan', 'booking'));
     }
 }

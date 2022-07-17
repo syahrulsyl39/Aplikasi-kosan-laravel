@@ -39,10 +39,10 @@
             <div class="row">
                 <div class="col-lg-12 mt-5">
                     <div class="product-slider owl-carousel">
-                        @foreach ( $product as $item )
+                        @forelse ( $product as $item )
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="{{ asset ('storage/'.$item->picture) }}" height="220px" alt="" />
+                                <img src="{{ asset ('storage/'.$item->photo) }}" height="220px" alt="" />
                                 <ul>
                                     <li class="w-icon active">
                                         <a href="{{ route('booking') }}"><i class="icon_bag_alt"></i></a>
@@ -60,7 +60,15 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td class="text-md-center">
+                                <h3>
+                                    mohon maaf sebelumnya info kost cicit belum tersedia
+                                </h3>
+                            </td>
+                          </tr>
+                        @endforelse
                     </div>
                 </div>
             </div>

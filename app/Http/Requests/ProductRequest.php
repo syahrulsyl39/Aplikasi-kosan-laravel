@@ -27,7 +27,8 @@ class ProductRequest extends FormRequest
             'boarding_type' => 'required|max:255',
             'street_name' => 'required|max:255',
             'price' => 'required|integer',
-            'details' => 'required'
+            'details' => 'required',
+            'photo' => 'required'
         ];
     }
 }

@@ -18,7 +18,8 @@ class HomeController extends Controller
     }
     public function detail()
     {
-        return view('frontend.detail');
+        $product = Product::all();
+        return view('frontend.detail', compact('product'));
     }
     public function booking()
     {

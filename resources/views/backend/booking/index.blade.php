@@ -20,9 +20,9 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ( $booking as $key=>$item )
+              @forelse ( $booking as $item )
               <tr>
-                <th scope="row">{{ $key+1 }}</th>
+                <th scope="row">{{ $item->id }}</th>
                 <td> {{ $item->customer_name }}</td>
                 <td> {{ $item->email }}</td>
                 <td> {{ $item->no_phone }} </td>
@@ -30,7 +30,13 @@
                 <td> {{ $item->address }} </td>
                 <td> {{ $item->total_cost }} </td>
               </tr>
-              @endforeach
+              @empty
+              <tr>
+                <td colspan="7" class="text-center p-5">
+                    Data tidak tersedia
+                </td>
+              </tr>
+              @endforelse
             </tbody>
           </table>
         </div>

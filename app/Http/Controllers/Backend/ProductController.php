@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -21,9 +22,25 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $product = $request->all();
+        $this->validate($request, [
+            'boarding_type' => 'required|string',
+            'street_name' => 'required|string',
+            'price' => 'required|string',
+            'details' => 'required|string',
+            'photo' => 'required',
+        ]);
 
-        Product::create($product);
+        if ($request->file('photo')) {
+            $file = $request->file('photo')->store('gambar', 'public');
+        }
+
+        Product::create([
+            "boarding_type" => $request->input('boarding_type'),
+            "street_name" => $request->input('street_name'),
+            "price" => $request->input('price'),
+            "details" => $request->input('details'),
+            "photo" => $file
+        ]);
 
         return redirect()->route('show-kosan');
     }
@@ -37,13 +54,34 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'boarding_type' => 'required|string',
+            'street_name' => 'required|string',
+            'price' => 'required|string',
+            'details' => 'required|string',
+            'photo' => 'required',
+        ]);
+
         $product = Product::where('id', $id)->first();
+
+        if ($request->file('photo')) {
+            $file = $request->file('photo')->store('gambar', 'public');
+            if ($product->photo && file_exists(storage_path('app/public/' . $product->photo))) {
+                Storage::delete('public/' . $product->photo);
+                $file = $request->file('photo')->store('gambar', 'public');
+            }
+        }
+
+        if ($request->file('photo') === null) {
+            $file = $product->photo;
+        }
 
         $product->update([
             "boarding_type" => $request->input('boarding_type'),
             "street_name" => $request->input('street_name'),
             "price" => $request->input('price'),
             "details" => $request->input('details'),
+            "photo" => $file
         ]);
 
         return redirect()->route('show-kosan');
